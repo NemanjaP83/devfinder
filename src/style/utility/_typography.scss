@@ -1,0 +1,29 @@
+@use "./variables";
+@use "./functions";
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+$main-font: 'Space Mono', monospace;;
+
+h1 {
+  font-weight: functions.font-weight(bold);
+  font-size: functions.font-size(h1);
+  line-height: functions.line-height(h1);
+}
+
+h2 {
+  font-weight: functions.font-weight(bold);
+  font-size: functions.font-size(h2);
+  line-height: functions.line-height(h2);
+}
+
+h3 {
+  font-weight: functions.font-weight(regular);
+  font-size: functions.font-size(h3);
+  line-height: functions.line-height(h3);
+}
+
+h4 {
+  font-weight: functions.font-weight(regular);
+  font-size: functions.font-size(h4);
+  line-height: functions.line-height(h4);
+}

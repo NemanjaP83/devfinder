@@ -1,0 +1,35 @@
+$font-weights: (
+  "thin": 300,
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+  "bolder": 900,
+);
+
+$font-sizes: (
+  "h1": 26px,
+  "h2": 22px,
+  "h3": 16px,
+  "h4": 13px,
+  "body": 15px,
+);
+
+$line-heights: (
+  "h1": 38px,
+  "h2": 33px,
+  "h3": 24px,
+  "h4": 20px,
+  "body": 25px,
+);
+
+@function font-weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+@function font-size($font-size) {
+  @return map-get($font-sizes, $font-size);
+}
+
+@function line-height($line-height) {
+  @return map-get($line-heights, $line-height);
+}
