@@ -1,8 +1,8 @@
 @use "./variables";
 @use "./functions";
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-$main-font: 'Space Mono', monospace;;
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+$main-font: "Space Mono", monospace;
 
 h1 {
   font-weight: functions.font-weight(bold);

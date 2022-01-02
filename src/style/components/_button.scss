@@ -1,19 +1,18 @@
-@use "../utility/variables" as var;
-@use "../utility/functions";
+@use '../utility/variables' as var;
+@use '../utility/functions';
 
 .btn {
-    border-radius: 10px;
-    padding: 12.5px 24px;
-    color: var.$white;
-    background-color: var.$blue;
-    font-size: 16px;
-    font-weight: functions.font-weight(bold);
-    outline: none;
-    border: none;
-    margin: 9.5px 10px 9.5px 0;
+  border-radius: 10px;
+  padding: 12.5px 24px;
+  color: var.$white;
+  background-color: var.$blue;
+  font-size: 16px;
+  font-weight: functions.font-weight(bold);
+  outline: none;
+  border: none;
+  margin: 9.5px 10px 9.5px 0;
 
-    &:hover {
-        background-color: lighten(var.$blue, 10);
-    }
-
+  &:hover {
+    background-color: lighten(var.$blue, 10);
+  }
 }

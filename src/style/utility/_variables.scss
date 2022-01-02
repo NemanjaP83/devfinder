@@ -1,24 +1,36 @@
-$blue: #0079FF;
-$gray: #697C9A;
-$bluish: #4B6A9B;
+$blue: #0079ff;
+$gray: #697c9a;
+$bluish: #4b6a9b;
 $white: #fff;
-$bg-dark: #141D2F;
-$bg-light: #F6F8FF;
-$card-dark: #1E2A47;
-$text-dark: #2B3442;
+$bg-dark: #141d2f;
+$bg-light: #f6f8ff;
+$card-dark: #1e2a47;
+$text-dark: #2b3442;
 
 :root {
-    --blue: #0079FF;
-    --gray: #697C9A;
-    --bluish: #4B6A9B;
-    --white: #fff;
-    --bg-dark: #141D2F;
-    --bg-light: #F6F8FF;
-    --card-dark: #1E2A47;
-    --text-dark: #2B3442;
+  --blue: #0079ff;
+  --gray: #697c9a;
+  --bluish: #4b6a9b;
+  --white: #fff;
+  --bg-dark: #141d2f;
+  --bg-light: #f6f8ff;
+  --card-dark: #1e2a47;
+  --text-dark: #2b3442;
 }
 
 :root[data-theme="dark"] {
+  --blue: #{$blue};
+  --gray: #{$white};
+  --bluish: #{$white};
+  --white: #{$card-dark};
+  --bg-dark: #{$bg-dark};
+  --bg-light: #{$bg-dark};
+  --card-dark: #{$card-dark};
+  --text-dark: #{$white};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
     --blue: #{$blue};
     --gray: #{$white};
     --bluish: #{$white};
@@ -27,17 +39,5 @@ $text-dark: #2B3442;
     --bg-light: #{$bg-dark};
     --card-dark: #{$card-dark};
     --text-dark: #{$white};
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --blue: #{$blue};
-        --gray: #{$white};
-        --bluish: #{$white};
-        --white: #{$card-dark};
-        --bg-dark: #{$bg-dark};
-        --bg-light: #{$bg-dark};
-        --card-dark: #{$card-dark};
-        --text-dark: #{$white};
-    }
+  }
 }

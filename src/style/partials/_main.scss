@@ -1,9 +1,8 @@
 @use "../utility/variables" as var;
 @use "../utility/typography";
 @use "../utility/mixins";
-@use  "../utility/functions";
+@use "../utility/functions";
 @use "../components/button";
-
 
 body {
   background-color: var(--bg-light);
@@ -13,9 +12,18 @@ body {
   line-height: functions.line-height(body);
   font-weight: functions.font-weight(regular);
 
+  @media (max-width: 768px) {
+    padding-inline: 2%;
+  }
+
   #app {
     max-width: 730px;
     width: 100%;
+
+    @media (max-width: 768px) {
+      max-width: 573px;
+      width: 100%;
+    }
   }
 }
 
@@ -35,7 +43,7 @@ body {
     letter-spacing: 2.5px;
     line-height: functions.line-height(h1);
     cursor: pointer;
-  
+
     display: flex;
     align-items: center;
 
@@ -57,8 +65,8 @@ body {
 
 [data-theme="dark"] {
   .header__icon:hover > * {
-    color: #90A4D4;
-    fill: #90A4D4;
+    color: #90a4d4;
+    fill: #90a4d4;
   }
 }
 
@@ -68,8 +76,6 @@ body {
     fill: #222731;
   }
 }
-
-
 
 .search {
   @include mixins.space-between;
@@ -81,7 +87,7 @@ body {
   .search__icon {
     margin-left: 32px;
     margin-right: 24px;
-   }
+  }
 
   input {
     color: var(--bluish);
@@ -97,7 +103,7 @@ body {
   }
 
   #result {
-    color: #F74646;
+    color: #f74646;
     font-weight: functions.font-weight(bold);
     margin-right: 24px;
   }
@@ -106,7 +112,24 @@ body {
 .user {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto 85px 1fr;
+  grid-template-rows: 110px 80px 85px 1fr;
+
+  grid-template-areas:
+    "octocat bio bio bio"
+    "octocat details details details"
+    "octocat stats stats stats"
+    "octocat links links links";
+
+  @media (max-width: 768px) {
+    grid-template-rows: 120px auto 85px 120px;
+    padding: 40px;
+
+    grid-template-areas:
+      "octocat bio bio bio"
+      "details details details details"
+      "stats stats stats stats"
+      "links links links links";
+  }
 
   min-height: 420px;
   background-color: var(--white);
@@ -116,35 +139,68 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   .octocat {
-    grid-row: 1 / -1;
+    grid-area: octocat;
     justify-self: center;
     margin-top: 48px;
     height: 117px;
     width: 117px;
     border-radius: 50%;
     overflow: hidden;
-    
+
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 
   &__bio {
-    grid-column: 2 / -1;
+    grid-area: bio;
     margin-top: 44px;
 
-    display: grid;
-    grid-template-rows: 41px 44px 57px;
+    @media (max-width: 768px) {
+      margin: 0;
+      margin-left: 41px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     &-name {
-      @include mixins.space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       margin-bottom: 2px;
       color: var(--bluish);
+
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
       h2 {
         color: var(--text-dark);
       }
     }
 
+    #date {
+      margin-left: auto;
+
+      @media (max-width: 768px) {
+        margin-left: 0;
+        order: 1;
+      }
+    }
+
     #login {
       color: var(--blue);
+    }
+  }
+
+  &__details {
+    grid-area: details;
+    align-self: center;
+
+    @media (max-width: 768px) {
+      margin-top: 15px;
     }
 
     #profile_bio {
@@ -153,7 +209,7 @@ body {
   }
 
   &__stats {
-    grid-column: 2 / -1;
+    grid-area: stats;
     background-color: var(--bg-light);
     border-radius: 10px;
 
@@ -162,7 +218,7 @@ body {
     justify-content: space-evenly;
 
     p {
-      color: var(--bluish); 
+      color: var(--bluish);
     }
 
     span {
@@ -173,12 +229,16 @@ body {
   }
 
   &__links {
-    grid-column: 2 / -1;
+    grid-area: links;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 22px 22px;
     row-gap: 20px;
     place-content: center;
+
+    @media (max-width: 768px) {
+      margin-top: 30px;
+    }
 
     div {
       display: flex;

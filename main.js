@@ -1,4 +1,4 @@
-import './global.reset.css';
+import './global.reset.scss';
 import './src/style/index.scss';
 import './src/js/colorMode';
 import './src/js/fetch';
