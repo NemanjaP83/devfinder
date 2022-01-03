@@ -31,4 +31,6 @@ npm run build
 ```
 to bundle your application
 
+## Live preview 
 
+#### [GitHubSearch App](https://devfinder-eight.vercel.app/) <-- click on link for live preview
