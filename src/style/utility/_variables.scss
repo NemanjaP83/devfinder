@@ -7,6 +7,9 @@ $bg-light: #f6f8ff;
 $card-dark: #1e2a47;
 $text-dark: #2b3442;
 
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 600px;
+
 :root {
   --blue: #0079ff;
   --gray: #697c9a;
@@ -18,7 +21,7 @@ $text-dark: #2b3442;
   --text-dark: #2b3442;
 }
 
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
   --blue: #{$blue};
   --gray: #{$white};
   --bluish: #{$white};
